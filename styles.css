@@ -18,7 +18,7 @@ button {
   font-size: inherit;
   font-family: inherit;
   border: 0;
-  padding: 0.5rem 1.5rem; 
+  padding: 0.5rem 1.5rem;
   min-height: 3rem;
   background: var(--grey);
   cursor: pointer;
@@ -53,6 +53,7 @@ button[data-attr='AC'] {
   max-width: 40rem;
   border-radius: 2%;
   padding: 1rem 0 1rem;
+  position: relative;
 }
 
 .calculator__display {
@@ -77,8 +78,10 @@ button[data-attr='AC'] {
   color: var(--white);
 }
 
-
-
-
-
-
+.equation__display {
+  color: #d4d4d4;
+  font-size: 12px;
+  position: absolute;
+  right: 7px;
+  bottom: 0;
+}

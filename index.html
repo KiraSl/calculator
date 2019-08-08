@@ -15,22 +15,22 @@
         <p id="result">0</p>
       </div>
       <div class="calculator__keys">
-        <button class="calculator__keys--operator" data-attr="÷" onclick="selectOperator(this)"> ÷ </button>
-        <button class="calculator__keys--operator" data-attr="*" onclick="selectOperator(this)"> × </button>
-        <button class="calculator__keys--operator" data-attr="-" onclick="selectOperator(this)"> - </button>
-        <button class="calculator__keys--operator" data-attr="+" onclick="selectOperator(this)"> + </button>
-        <button data-attr="7" onclick="selectNumber(this)"> 7 </button>
-        <button data-attr="8" onclick="selectNumber(this)"> 8 </button>
-        <button data-attr="9" onclick="selectNumber(this)"> 9 </button>
-        <button data-attr="4" onclick="selectNumber(this)"> 4 </button> 
-        <button data-attr="5" onclick="selectNumber(this)"> 5 </button>
-        <button data-attr="6" onclick="selectNumber(this)"> 6 </button>
-        <button data-attr="1" onclick="selectNumber(this)"> 1 </button>
-        <button data-attr="2" onclick="selectNumber(this)"> 2 </button>
-        <button data-attr="3" onclick="selectNumber(this)"> 3 </button>
-        <button data-attr="0" onclick="selectNumber(this)"> 0 </button>
-        <button data-attr="AC" onclick="reset()"> AC </button>
-        <button data-attr="="> = </button>
+        <button class="calculator__keys--operator" onclick="selectOperator('/')"> ÷ </button>
+        <button class="calculator__keys--operator" onclick="selectOperator('*')"> × </button>
+        <button class="calculator__keys--operator" onclick="selectOperator('-')"> - </button>
+        <button class="calculator__keys--operator" onclick="selectOperator('+')"> + </button>
+        <button onclick="selectNumber(7)"> 7 </button>
+        <button onclick="selectNumber(8)"> 8 </button>
+        <button onclick="selectNumber(9)"> 9 </button>
+        <button onclick="selectNumber(4)"> 4 </button> 
+        <button onclick="selectNumber(5)"> 5 </button>
+        <button onclick="selectNumber(6)"> 6 </button>
+        <button onclick="selectNumber(1)"> 1 </button>
+        <button onclick="selectNumber(2)"> 2 </button>
+        <button onclick="selectNumber(3)"> 3 </button>
+        <button onclick="selectNumber(0)"> 0 </button>
+        <button class="reset" onclick="reset()"> AC </button>
+        <button class="calculate" onclick="calculate()"> = </button>
       </div>
     </div>
   </div>

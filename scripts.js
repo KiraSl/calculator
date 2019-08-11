@@ -59,3 +59,35 @@ function reset() {
   equation = undefined;
   currentNumber = 0;
 }
+
+document.addEventListener('keypress', function (keyboardEvent) {
+  const operatorArray = ['*', '+', '-', '/'];
+  const calculateActions = ['=', "Enter"];
+  const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
+  
+  let pressedKey = keyboardEvent.key;
+  switch (pressedKey) {
+    case "x":
+      pressedKey = "*";
+      break;
+    case "%":
+      pressedKey = "/";
+      break;
+    case ",":
+      pressedKey = ".";
+      break;
+  }
+
+  // if the pressed key is a number, then call the selectNumber function and pass in the pressed key
+  if (numbers.includes(pressedKey)) {
+    selectNumber(pressedKey);
+  } 
+  // if the pressed key is *x, +, -, /`, then call the selectOperator and pass the pressed key
+  if (operatorArray.includes(pressedKey)) {
+    selectOperator(pressedKey);
+  }
+  
+  if (calculateActions.includes(pressedKey)) {
+    calculate();
+  }
+})

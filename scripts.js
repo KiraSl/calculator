@@ -2,10 +2,12 @@ let currentNumber = 0;
 let equation;
 
 function selectNumber(number) {
-  // if we have some form of equation set already, we will append the clicked number to the current equation
-  if (equation) {
-    equation = `${equation}${number}`;
+  // if we clicked the dot and don't have a currentNumber, we will prepend 0 to the dot
+  if (!currentNumber && number === '.') {
+    number = '0.';
   }
+  // if we have some form of equation set already, we will append the clicked number to the current equation
+  equation = equation && `${equation}${number}`;
   // If we just clicked a number, we will append the new clicked number to the old one. 
   // Eg. clicked 1 preveiolsy, now clicked 3, the current number will be set to 13
   if (currentNumber) {
@@ -36,7 +38,7 @@ function selectOperator(operator) {
   } else {
     // if we previously clicked on an operator, we will replace the last character 
     // of the current equation (last character) with the operator we just clicked.
-    equation = `${equation.slice(0, -1)}${operator}`;
+    equation = equation && `${equation.slice(0, -1)}${operator}`;
   }
 
   // We will always reset the currentNumber to make sure we can understand that we just clicked an operator and not a number 
@@ -53,5 +55,7 @@ function calculate() {
 }
 
 function reset() {
-
+  document.querySelector('#result').innerText = '0';
+  equation = undefined;
+  currentNumber = 0;
 }
